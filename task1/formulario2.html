@@ -1,0 +1,39 @@
+<html>
+<head>
+	 <link rel="stylesheet" type="text/css" href="form-style-3.css">
+
+</head>
+<body>
+	<div class="form-style-3">
+	<form action="backEndForm.php" method="post" enctype="multipart/form-data">
+
+	<fieldset><legend>Insira fotos da Casa</legend>
+
+		<span>Fotos <span class="required">*</span></span><input name="arquivo" type="file">
+	</fieldset>
+	<fieldset><legend>Preencha os campos</legend>
+	<label for="field1"><span>Valor <span class="required">*</span></span><input type="number" id="valor_casa" class="input-field" name="valor_casa" value="" /></label>
+	<label for="field2"><span>Email <span class="required">*</span></span><input id="emailusuario" type="email" class="input-field" name="emailusuario" value="" /></label>
+	<label for="field3"><span>Telefone <span class="required">*</span></span><input type="number" id="telefone_usuario"  class="input-field" name="telefone_usuario" value="" /></label>
+	<label for="field3"><span>Estado de Conservacao <span class="required">*</span></span><input type="text" id="estado_conservacao" class="input-field" name="estado_conservacao" value="" /></label>
+	<label for="categoria_field"><span>Categoria: </span>
+	<select name="categoria_field" 
+		id="categoria_field"
+		class="select-field">
+
+		<option value="UmaEstrela">Uma estrela</option>
+		<option value="DuasEstrelas">Duas Estrelas</option>
+		<option value="TresEstrelas">Tres Estrelas</option>
+		<option value="QuatroEstrelas">Quatro Estrelas</option>
+		<option value="CincoEstrelas">Cinco Estrelas</option>
+
+	</select></label>
+	</fieldset>
+	<fieldset><legend>Descreva sua Casa</legend>
+	<label for="descricao_casa"><span>Descreva sua Casa <span class="required">*</span></span><textarea name="descricao_casa" class="textarea-field"></textarea></label>
+	<label><span>&nbsp;</span><input type="submit" value="Adicionar Casa" /></label>
+	</fieldset>
+	</form>
+	</div>
+</body>
+</html>
