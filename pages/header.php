@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="assets/js/script.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="nav nav-tabs nav-justified">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a href="./" class="navbar-brand">Alug</a>
