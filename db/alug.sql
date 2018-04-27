@@ -1,0 +1,65 @@
+CREATE TABLE `anuncios` (
+`id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+`id_usuario` int(11) NOT NULL,
+`id_categoria` int(11) NOT NULL,
+`titulo` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+`descricao` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+`valor` float NULL DEFAULT NULL,
+`estado` int(11) NULL DEFAULT NULL,
+PRIMARY KEY (`id`) 
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 10
+AVG_ROW_LENGTH = 0
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci
+KEY_BLOCK_SIZE = 0
+MAX_ROWS = 0
+MIN_ROWS = 0
+ROW_FORMAT = Compact;
+CREATE TABLE `anuncios_imagens` (
+`id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+`id_anuncio` int(11) NOT NULL,
+`url` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+PRIMARY KEY (`id`) 
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 12
+AVG_ROW_LENGTH = 0
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci
+KEY_BLOCK_SIZE = 0
+MAX_ROWS = 0
+MIN_ROWS = 0
+ROW_FORMAT = Compact;
+CREATE TABLE `categorias` (
+`id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+`nome` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+PRIMARY KEY (`id`) 
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+AVG_ROW_LENGTH = 0
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci
+KEY_BLOCK_SIZE = 0
+MAX_ROWS = 0
+MIN_ROWS = 0
+ROW_FORMAT = Compact;
+CREATE TABLE `usuarios` (
+`id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+`nome` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+`email` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+`senha` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+`telefone` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+PRIMARY KEY (`id`) 
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 3
+AVG_ROW_LENGTH = 0
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci
+KEY_BLOCK_SIZE = 0
+MAX_ROWS = 0
+MIN_ROWS = 0
+ROW_FORMAT = Compact;
