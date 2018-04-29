@@ -1,4 +1,4 @@
-<?php require 'pages/header.php'?>
+<?php require 'pages/header.php'; ?>
 <?php
 if(empty($_SESSION['cLogin'])) {
     ?>
@@ -68,5 +68,4 @@ if(isset($_POST['titulo']) && !empty($_POST['titulo'])) {
             <input type="submit" value="Adicionar" class="btn btn-default" />
         </form>
     </div>
-
-<?php require 'pages/footer.php'?>
+<?php require 'pages/footer.php'; ?>
