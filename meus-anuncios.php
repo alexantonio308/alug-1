@@ -33,6 +33,7 @@
                 <td>
                     <a href="" class="btn btn-default">Editar</a>
                     <a href="excluir-anuncio.php?id=<?php echo $anuncio['id']; ?>" class="btn btn-danger">Excluir</a>
+                    <a href="" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
         <?php endforeach; ?>

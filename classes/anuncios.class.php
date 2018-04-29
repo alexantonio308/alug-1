@@ -32,7 +32,6 @@ class Anuncios {
         $sql->bindValue(":estado", $estado);
         $sql->execute();
     }
-
     public function excluirAnuncio($id) {
         global $pdo;
 
