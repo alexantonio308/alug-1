@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
-                <textearea class="form-control" name="descricao"></textearea>
+                <textarea class="form-control" name="descricao" title="descrição"></textarea>
             </div>
             <div class="form-group">
                 <label for="estado">Estado de Conservação:</label>
