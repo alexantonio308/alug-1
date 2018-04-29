@@ -32,7 +32,7 @@ class Anuncios {
         $sql->bindValue(":estado", $estado);
         $sql->execute();
     }
-
+  
     public function excluirAnuncio($id) {
         global $pdo;
 
@@ -44,6 +44,7 @@ class Anuncios {
         $sql->bindValue(":id", $id);
         $sql->execute();
     }
+
     public function getAnuncio($id) {
         $array = array();
         global $pdo;
@@ -124,6 +125,5 @@ class Anuncios {
                 }
             }
         }
-
     }
 }
