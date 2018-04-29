@@ -1,5 +1,30 @@
-<?php require 'pages/header.php'?>
+<?php require 'pages/header.php'; ?>
+<?php
+if(empty($_SESSION['cLogin'])) {
+    ?>
+    <script type="text/javascript">window.location.href="login.php";</script>
+    <?php
+    exit;
+}
 
+require 'classes/anuncios.class.php';
+$a = new Anuncios();
+if(isset($_POST['titulo']) && !empty($_POST['titulo'])) {
+    $titulo = addslashes($_POST['titulo']);
+    $categoria = addslashes($_POST['categoria']);
+    $valor = addslashes($_POST['valor']);
+    $descricao = addslashes($_POST['descricao']);
+    $estado = addslashes($_POST['estado']);
+
+    $a->addAnuncio($titulo, $categoria, $valor, $descricao, $estado);
+
+    ?>
+    <div class="alert alert-success">
+        Produto adicionado com sucesso!
+    </div>
+    <?php
+}
+?>
     <div class="container">
         <h1>Meus Anúncios - Adicionar Anúncio</h1>
 
@@ -8,10 +33,16 @@
             <div class="form-group">
                 <label for="categoria">Categoria:</label>
                 <select name="categoria" id="categoria" class="form-control">
-                    <option value="1">Apartamento Padrão</option>
-                    <option value="2">Casa de Condomínio</option>
-                    <option value="3">Casa Padrão</option>
-                    <option value="4">Hotel</option>
+                    <?php
+                    require 'classes/categorias.class.php';
+                    $c = new Categorias();
+                    $cats = $c->getLista();
+                    foreach($cats as $cat):
+                        ?>
+                        <option value="<?php echo $cat['id']; ?>"><?php echo utf8_encode($cat['nome']); ?></option>
+                    <?php
+                    endforeach;
+                    ?>
                 </select>
             </div>
             <div class="form-group">
@@ -37,5 +68,4 @@
             <input type="submit" value="Adicionar" class="btn btn-default" />
         </form>
     </div>
-
-<?php require 'pages/footer.php'?>
+<?php require 'pages/footer.php'; ?>
