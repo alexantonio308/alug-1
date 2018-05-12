@@ -89,7 +89,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
 					<?php foreach($info['fotos'] as $foto): ?>
 					<div class="foto_item">
 						<img src="assets/images/anuncios/<?php echo $foto['url']; ?>" class="img-thumbnail" border="0" /><br/>
-						<a href="" class="btn btn-default">Excluir Imagem</a>
+						<a href="excluir-foto.php?id=<?php echo $foto['id']; ?>" class="btn btn-default">Excluir Imagem</a>
 					</div>
 					<?php endforeach; ?>
 				</div>
