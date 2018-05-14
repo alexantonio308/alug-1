@@ -31,7 +31,6 @@
 			</div>
 			<?php
 		}
-
 	}
 	?>
 	<form method="POST">
@@ -53,6 +52,5 @@
 		</div>
 		<input type="submit" value="Cadastrar" class="btn btn-default" />
 	</form>
-
 </div>
 <?php require 'pages/footer.php'; ?>
