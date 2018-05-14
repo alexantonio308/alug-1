@@ -6,10 +6,10 @@ class Anuncios {
 
         $array = array();
         $sql = $pdo->prepare("SELECT
-			*,
-			(select anuncios_imagens.url from anuncios_imagens where anuncios_imagens.id_anuncio = anuncios.id limit 1) as url
-			FROM anuncios
-			WHERE id_usuario = :id_usuario");
+            *,
+            (select anuncios_imagens.url from anuncios_imagens where anuncios_imagens.id_anuncio = anuncios.id limit 1) as url
+            FROM anuncios
+            WHERE id_usuario = :id_usuario");
         $sql->bindValue(":id_usuario", $_SESSION['cLogin']);
         $sql->execute();
 
@@ -50,10 +50,10 @@ class Anuncios {
         global $pdo;
 
         $sql = $pdo->prepare("SELECT
-			*,
-			(select categorias.nome from categorias where categorias.id = anuncios.id_categoria) as categoria,
-			(select usuarios.telefone from usuarios where usuarios.id = anuncios.id_usuario) as telefone
-		FROM anuncios WHERE id = :id");
+            *,
+            (select categorias.nome from categorias where categorias.id = anuncios.id_categoria) as categoria,
+            (select usuarios.telefone from usuarios where usuarios.id = anuncios.id_usuario) as telefone
+        FROM anuncios WHERE id = :id");
         $sql->bindValue(":id", $id);
         $sql->execute();
 
@@ -72,6 +72,29 @@ class Anuncios {
         }
 
         return $array;
+    }
+
+    
+
+    public function excluirFoto($id) {
+        global $pdo;
+
+        $id_anuncio = 0;
+
+        $sql = $pdo->prepare("SELECT id_anuncio FROM anuncios_imagens WHERE id = :id");
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            $row = $sql->fetch();
+            $id_anuncio = $row['id_anuncio'];
+        }
+
+        $sql = $pdo->prepare("DELETE FROM anuncios_imagens WHERE id = :id");
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        return $id_anuncio;
     }
 
     public function editAnuncio($titulo, $categoria, $valor, $descricao, $estado, $fotos, $id) {
